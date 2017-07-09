@@ -32,7 +32,7 @@ app.post('/upload', function(req, res){
     file.mv('../static_content/' + uuid + '.jpg', function(err){
         if (err)
             return res.status(500).json({success:false, message:err});
-        res.json({success:true, message:'https://clipper.myfuckingapi.com/'+ uuid + '.jpg'})
+        res.json({success:true, message:'https://myfuckingapi.com/'+ uuid + '.jpg'})
     })
 });
 
