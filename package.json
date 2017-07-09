@@ -1,0 +1,17 @@
+{
+  "name": "fileuploader",
+  "version": "1.0.0",
+  "description": "Simple Nodie File Upload",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amir Farsad",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-fileupload": "^0.1.4",
+    "morgan": "^1.8.2"
+  }
+}
