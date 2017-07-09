@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 const fileUpload = require('express-fileupload');
+var exec = require('child_process').execSync;
 
 var app = express();
 var port = process.env.port || 8191;
@@ -33,6 +34,14 @@ app.post('/upload', function(req, res){
             return res.status(500).json({success:false, message:err});
         res.json({success:true, message:'https://clipper.myfuckingapi.com/'+ uuid + '.jpg'})
     })
+});
+
+app.post('/search', function(req, res){
+    let command = 'curl -X POST -H "Content-Type: application/json" -d \'{"image_url":"'+ req.body.url +'"}\' http://localhost:5000/search'
+    var options = {
+    encoding: 'utf8'
+    };
+    res.send(exec(command, options));
 });
 
 app.listen(port);
